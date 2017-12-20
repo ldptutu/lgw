@@ -2,8 +2,7 @@
 /**
    Theme Name:lgw Forture WebSite
  */
-get_head();
+get_header();
 ?>
-
 
 <?php get_footer();

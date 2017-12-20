@@ -123,6 +123,7 @@ function lgw_color_css_wrap() {
 	    
 	    //bootstrap
 	    wp_enqueue_style('lgw-bootstrap',get_theme_file_uri('/assets/css/bootstrap.min.css'));
+        wp_enqueue_style('lgw-bootstrap',get_theme_file_uri('/assets/css/navbar-fixed-side.css'));
 	    
 	    wp_enqueue_style('lgw-style',get_stylesheet_uri());
 	    
