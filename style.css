@@ -199,6 +199,9 @@ body {
 .menu ul li {
     list-style:none;
 }
+.sub-menu {
+    float:left;
+}
 
 /* RESPONSIVE CSS
    -------------------------------------------------- */
