@@ -192,7 +192,14 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
-
+.menu ul {
+    background-color:#3f3f3f;
+    
+    
+}
+.menu ul li {
+    list-style:none;
+}
 
 /* RESPONSIVE CSS
    -------------------------------------------------- */
