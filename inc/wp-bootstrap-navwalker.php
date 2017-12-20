@@ -69,7 +69,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * a 0 if the strings are equal.
 			 */
 			if ( 0 === strcasecmp( $item->attr_title, 'divider' ) && 1 === $depth ) {
-	o			$output .= $indent . '<li role="presentation" class="divider">';
+                			$output .= $indent . '<li role="presentation" class="divider">';
 			} elseif ( 0 === strcasecmp( $item->title, 'divider' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="divider">';
 			} elseif ( 0 === strcasecmp( $item->attr_title, 'dropdown-header' ) && 1 === $depth ) {
