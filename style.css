@@ -194,8 +194,7 @@ body {
 }
 .menu ul {
     background-color:#3f3f3f;
-    
-    
+    list-style:none;
 }
 .menu ul li {
     list-style:none;
