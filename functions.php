@@ -9,14 +9,12 @@ function lgw_get_menu_for_index_widget() {
 }
 
 function create_left_menu( $theme_location ) {
+    $menu_list = "";
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-        $menu_list .= '<!-- Collect the nav links, forms, and other content for toggling -->';
-         
-         
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
  
-        $menu_list .= '<div class="list-group">' ."\n";
+        $menu_list = '<div class="list-group">' ."\n";
           
         foreach( $menu_items as $menu_item ) {
             if( $menu_item->menu_item_parent == 0 ) {
