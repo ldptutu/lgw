@@ -17,6 +17,10 @@ function clean_custom_menus() {
         
 		$menu_list = '<nav>' ."\n";
 		$menu_list .= "\t\t\t\t". '<ul>' ."\n";
+
+
+        print_r($menu_list);
+        
 		foreach ((array) $menu_items as $key => $menu_item) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
