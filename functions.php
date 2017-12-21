@@ -21,6 +21,7 @@ function clean_custom_menus() {
 
         print_r($menu_list);
         
+        
 		foreach ((array) $menu_items as $key => $menu_item) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
