@@ -1,7 +1,7 @@
 <?php
 
 
-clean_custom_menus();
+create_left_menu();
 
 /*wp_nav_menu(array(
     'theme_location' => 'top',

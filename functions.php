@@ -8,6 +8,52 @@ function lgw_get_menu_for_index_widget() {
     wp_get_nav_menu_items('top');
 }
 
+function create_left_menu( $theme_location ) {
+    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+        $menu_list .= '<!-- Collect the nav links, forms, and other content for toggling -->';
+         
+         
+        $menu = get_term( $locations[$theme_location], 'nav_menu' );
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+ 
+        $menu_list .= '<div class="list-group">' ."\n";
+          
+        foreach( $menu_items as $menu_item ) {
+            if( $menu_item->menu_item_parent == 0 ) {
+                 
+                $parent = $menu_item->ID;
+                 
+                $menu_array = array();
+                foreach( $menu_items as $submenu ) {
+                    if( $submenu->menu_item_parent == $parent ) {
+                        $bool = true;
+                        $menu_array[] = '<div>' . $submenu->title . '</div>' ."\n";
+                    }
+                }
+                
+                if( $bool == true && count( $menu_array ) > 0 ) {
+                     
+                    $menu_list .= '<p class="list-group-item-text">' ."\n";
+                    $menu_list .= implode( "\n", $menu_array );
+                    $menu_list .= '</p>' ."\n";
+                     
+                } else {
+                    $menu_list .= '<div class="list-group-item>' ."\n";
+                    $menu_list .= '<h4 class="list-group-heading>' . $menu_item->title . '</h4>' ."\n";
+                }
+                 
+            }
+            $menu_list .= '</div>' ."\n";
+        }
+
+        $menu_list .= '</div><!-- /.container-fluid -->' ."\n";
+  
+    } else {
+        $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+    }
+     
+    echo $menu_list;
+}
 
 function clean_custom_menus() {
 	$menu_name = 'top'; // specify custom menu slug
