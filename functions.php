@@ -1,8 +1,29 @@
 <?php
 
+
+
 if (! file_exists( get_template_directory() . '/inc/wp-bootstrap-navwalker.php')) {
     return new WP_Error( 'wp-bootstrap-navwalker-missing', __( 'It appears the wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
 }
+
+
+if ( ! function_exists( 'lgw_paging_nav' ) ) {
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 */
+	function lgw_paging_nav() {
+		global $wp_query;
+
+		$args = array(
+			'type' 	    => 'list',
+			'next_text' => _x( 'Next', 'Next post', 'storefront' ),
+			'prev_text' => _x( 'Previous', 'Previous post', 'storefront' ),
+			);
+
+		the_posts_pagination( $args );
+	}
+}
+
 
 function lgw_get_menu_for_index_widget() {
     wp_get_nav_menu_items('top');
