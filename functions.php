@@ -22,7 +22,9 @@ function create_left_menu( $theme_location ) {
             if( $menu_item->menu_item_parent == 0 ) {
                  
                 $parent = $menu_item->ID;
-                 
+
+                $menu_list .= '<div class="list-group-item>' ."\n";
+                $menu_list .= '<h4 class="list-group-heading>' . $menu_item->title . '</h4>' ."\n";
                 $menu_array = array();
                 foreach( $menu_items as $submenu ) {
                     if( $submenu->menu_item_parent == $parent ) {
@@ -32,18 +34,13 @@ function create_left_menu( $theme_location ) {
                 }
                 
                 if( $bool == true && count( $menu_array ) > 0 ) {
-                     
                     $menu_list .= '<p class="list-group-item-text">' ."\n";
                     $menu_list .= implode( "\n", $menu_array );
                     $menu_list .= '</p>' ."\n";
-                     
-                } else {
-                    $menu_list .= '<div class="list-group-item>' ."\n";
-                    $menu_list .= '<h4 class="list-group-heading>' . $menu_item->title . '</h4>' ."\n";
                 }
-                 
+
+                $menu_list .= '</div>' ."\n";
             }
-            $menu_list .= '</div>' ."\n";
         }
 
         $menu_list .= '</div><!-- /.container-fluid -->' ."\n";
