@@ -29,14 +29,14 @@ function create_left_menu( $theme_location ) {
                 foreach( $menu_items as $submenu ) {
                     if( $submenu->menu_item_parent == $parent ) {
                         $bool = true;
-                        $menu_array[] = '<div>' . $submenu->title . '</div>' ."\n";
+                        $menu_array[] = '<span>' . $submenu->title . '</span>' ."\n";
                     }
                 }
                 
                 if( $bool == true && count( $menu_array ) > 0 ) {
-                    $menu_list .= '<p class="list-group-item-text">' ."\n";
+                    $menu_list .= '<div class="list-group-item-text">' ."\n";
                     $menu_list .= implode( "\n", $menu_array );
-                    $menu_list .= '</p>' ."\n";
+                    $menu_list .= '</div>' ."\n";
                 }
 
                 $menu_list .= '</div>' ."\n";
