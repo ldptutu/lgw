@@ -193,9 +193,10 @@ body {
     letter-spacing: -1px;
 }
 
-.nav-custom  span{
+.nav-custom menu span{
     Background-color:#3f3f3f;
 }
+
 
 /* make sidebar nav vertical */ 
 @media (min-width: 768px) {
