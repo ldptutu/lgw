@@ -24,6 +24,9 @@ if ( ! function_exists( 'lgw_paging_nav' ) ) {
 	}
 }
 
+function lgw_get_post_first_trumbil_image($post_id) {
+
+}
 
 function lgw_get_menu_for_index_widget() {
     wp_get_nav_menu_items('top');
@@ -206,9 +209,7 @@ add_filter( 'attachments_default_instance', '__return_false' ); // disable the d
 function lgw_color_css_wrap() {
     
 }
-
-
-	function lgw_scripts() {
+    function lgw_scripts() {
 	    
 	    //bootstrap
 	    wp_enqueue_style('lgw-bootstrap',get_theme_file_uri('/assets/css/bootstrap.min.css'));
