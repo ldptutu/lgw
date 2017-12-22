@@ -18,7 +18,7 @@
                                 var l_url_img = this.src;
                                 jQuery(this).click(function(){
                                     alert('here');
-                                    //jQuery('#ex1 img').src=l_url_img;
+                                    jQuery('#ex1 img')[0].src=l_url_img;
                                 });
                             });
                         }());
