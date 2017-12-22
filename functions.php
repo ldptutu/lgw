@@ -96,8 +96,8 @@ if (! function_exists( 'lgw_post_header' ) ) {
      * @since 1.0.0
      */
     function lgw_post_header() {?>
-    <div class="col-md-4">
-	<header class="entry-header">
+
+    <header class="entry-header">
 	<?php
 	if ( is_single() ) {
 	    lgw_posted_on();
@@ -109,7 +109,7 @@ if (! function_exists( 'lgw_post_header' ) ) {
 	    the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 	}
 	?>
-	</header><!-- .entry-header -->
+    </header><!-- .entry-header -->
 <?php }
 }
 
@@ -121,7 +121,8 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
      */
     function lgw_post_content() {
 ?>
-    <div class="entry-content">
+    <div class="col-md-4">
+	<div class="entry-content">
 	<?php
 
 	/**
@@ -432,9 +433,9 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
 
 
 add_action( 'lgw_single_post',         'lgw_post_pics',          10 );
-add_action( 'lgw_single_post',         'lgw_post_header',          20 );
 /*
-   add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
+add_action( 'lgw_single_post',         'lgw_post_header',          20 );
+add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
  */
 add_action( 'lgw_single_post',         'lgw_post_content',         40 );
 
