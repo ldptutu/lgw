@@ -25,6 +25,45 @@ if ( ! function_exists( 'lgw_paging_nav' ) ) {
 }
 
 
+if ( ! function_exists( 'lgw_posted_on' ) ) {
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function lgw_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			_x( 'Posted on %s', 'post date', 'storefront' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		echo wp_kses( apply_filters( 'storefront_single_post_posted_on_html', '<span class="posted-on">' . $posted_on . '</span>', $posted_on ), array(
+			'span' => array(
+				'class'  => array(),
+			),
+			'a'    => array(
+				'href'  => array(),
+				'title' => array(),
+				'rel'   => array(),
+			),
+			'time' => array(
+				'datetime' => array(),
+				'class'    => array(),
+			),
+		) );
+	}
+
+
 
 if ( ! function_exists( 'lgw_post_header' ) ) {
 	/**
@@ -37,11 +76,11 @@ if ( ! function_exists( 'lgw_post_header' ) ) {
 		<header class="entry-header">
 		<?php
 		if ( is_single() ) {
-			storefront_posted_on();
+			lgw_posted_on();
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
 			if ( 'post' == get_post_type() ) {
-				storefront_posted_on();
+				lgw_posted_on();
 			}
 
 			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
