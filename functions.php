@@ -8,27 +8,27 @@ if (! file_exists( get_template_directory() . '/inc/wp-bootstrap-navwalker.php')
 
 
 if ( ! function_exists( 'lgw_paging_nav' ) ) {
-	/**
-	 * Display navigation to next/previous set of posts when applicable.
-	 */
-	function lgw_paging_nav() {
-		global $wp_query;
+    /**
+     * Display navigation to next/previous set of posts when applicable.
+     */
+    function lgw_paging_nav() {
+	global $wp_query;
 
-		$args = array(
-			'type' 	    => 'list',
-			'next_text' => _x( 'Next', 'Next post', 'storefront' ),
-			'prev_text' => _x( 'Previous', 'Previous post', 'storefront' ),
-			);
+	$args = array(
+	    'type' 	    => 'list',
+	    'next_text' => _x( 'Next', 'Next post', 'storefront' ),
+	    'prev_text' => _x( 'Previous', 'Previous post', 'storefront' ),
+	);
 
-		the_posts_pagination( $args );
-	}
+	the_posts_pagination( $args );
+    }
 }
 
 
 if ( ! function_exists( 'lgw_posted_on' ) ) {
-	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
-	 */
+    /**
+     * Prints HTML with meta information for the current post-date/time and author.
+     */
     function lgw_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -64,7 +64,32 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
     }
 }
 
-
+if ( ! function_exists('lgw_post_pics') ) {
+    function lgw_post_pics() {
+	echo the_ID();
+	echo get_the_id();
+	$attachments = new Attachments( 'attachments', get_the_ID() );
+	$big_atta_pic = 0;
+	$small_atta_pic_item = "";
+	if( $attachments->exist() ) :
+?>	
+    <div class="col-md4">
+	<?php while( $attachment = $attachments->get() ) :?>
+	    <?php 	    if ($big_atta_pic == "0") :?>
+		<div>
+		    <img src="0"/>
+		</div>
+		<ul>
+		    <? php $big_atta_pic = 1 ?>
+	    <?php endif; ?>
+	    <?php $small_atta_pic_item .= '<li><img src=""/></li>' ?>
+	<?php endwhile; ?>
+		</ul>
+    </div><!-- end col-m4 -->
+<?php endif; ?>
+<?php
+}
+}
 
 if (! function_exists( 'lgw_post_header' ) ) {
     /**
@@ -406,7 +431,7 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
  */
 
 
-
+add_action( 'lgw_single_post',         'lgw_post_pics',          10 );
 add_action( 'lgw_single_post',         'lgw_post_header',          10 );
 add_action( 'lgw_single_post',         'lgw_post_meta',            20 );
 add_action( 'lgw_single_post',         'lgw_post_content',         30 );
