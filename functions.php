@@ -430,9 +430,11 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
 
 
 add_action( 'lgw_single_post',         'lgw_post_pics',          10 );
-add_action( 'lgw_single_post',         'lgw_post_header',          10 );
-add_action( 'lgw_single_post',         'lgw_post_meta',            20 );
-add_action( 'lgw_single_post',         'lgw_post_content',         30 );
+add_action( 'lgw_single_post',         'lgw_post_header',          20 );
+/*
+add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
+*/
+add_action( 'lgw_single_post',         'lgw_post_content',         40 );
 
 /*
    add_action( 'lgw_single_post_bottom',  'lgw_post_nav',             10 );
