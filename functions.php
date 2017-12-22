@@ -83,7 +83,8 @@ if ( ! function_exists('lgw_post_pics') ) {
 		<?php echo $attachments->image(array(50,50)); ?>
 	    </li>
 	<?php endwhile; ?>
-		</ul> </div><!-- end col-m4 -->
+		</ul>
+    </div><!-- end col-m4 -->
 <?php endif; ?>
 <?php
 }
@@ -131,6 +132,8 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
 	     */
 	    do_action( 'storefront_post_content_before' );
 
+	    echo "hah";
+	    
 	    the_content(
 		sprintf(
 		    __( 'Continue reading %s', 'storefront' ),
