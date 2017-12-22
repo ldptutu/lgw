@@ -29,67 +29,67 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function lgw_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-		$posted_on = sprintf(
-			_x( 'Posted on %s', 'post date', 'storefront' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo wp_kses( apply_filters( 'storefront_single_post_posted_on_html', '<span class="posted-on">' . $posted_on . '</span>', $posted_on ), array(
-			'span' => array(
-				'class'  => array(),
-			),
-			'a'    => array(
-				'href'  => array(),
-				'title' => array(),
-				'rel'   => array(),
-			),
-			'time' => array(
-				'datetime' => array(),
-				'class'    => array(),
-			),
-		) );
+    function lgw_posted_on() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+	    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
+	$time_string = sprintf( $time_string,
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() ),
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
+	);
 
+	$posted_on = sprintf(
+	    _x( 'Posted on %s', 'post date', 'storefront' ),
+	    '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
 
-if ( ! function_exists( 'lgw_post_header' ) ) {
-	/**
-	 * Display the post header with a link to the single post
-	 *
-	 * @since 1.0.0
-	 */
-	function lgw_post_header() {
-		?>
-		<header class="entry-header">
-		<?php
-		if ( is_single() ) {
-			lgw_posted_on();
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			if ( 'post' == get_post_type() ) {
-				lgw_posted_on();
-			}
-
-			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		}
-		?>
-		</header><!-- .entry-header -->
-		<?php
-	}
+	echo wp_kses( apply_filters( 'storefront_single_post_posted_on_html', '<span class="posted-on">' . $posted_on . '</span>', $posted_on ), array(
+	    'span' => array(
+		'class'  => array(),
+	    ),
+	    'a'    => array(
+		'href'  => array(),
+		'title' => array(),
+		'rel'   => array(),
+	    ),
+	    'time' => array(
+		'datetime' => array(),
+		'class'    => array(),
+	    ),
+	) );
+    }
 }
+
+
+
+if (! function_exists( 'lgw_post_header' ) ) {
+    /**
+     * Display the post header with a link to the single post
+     *
+     * @since 1.0.0
+     */
+    function lgw_post_header() {?>
+    <header class="entry-header">
+	<?php
+	if ( is_single() ) {
+	    lgw_posted_on();
+	    the_title( '<h1 class="entry-title">', '</h1>' );
+	} else {
+	    if ( 'post' == get_post_type() ) {
+		lgw_posted_on();
+	    }
+	    
+	    the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+	}
+	?>
+    </header><!-- .entry-header -->
+<?php }
+}
+
 
 
 
@@ -318,6 +318,6 @@ add_action( 'lgw_single_post',         'lgw_post_content',         30 );
 add_action( 'lgw_single_post_bottom',  'lgw_post_nav',             10 );
 add_action( 'lgw_single_post_bottom',  'lgw_display_comments',     20 );
 add_action( 'lgw_post_content_before', 'lgw_post_thumbnail',       10 );
-*/
-
+		*/
+		
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
