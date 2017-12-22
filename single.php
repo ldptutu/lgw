@@ -6,18 +6,37 @@
  */
 
 get_header(); ?>
-<h1>abvdcdfd</h1>
-		<?php while ( have_posts() ) : the_post();
 
-			do_action( 'storefront_single_post_before' );
 
-			get_template_part( 'content', 'single' );
 
-			do_action( 'storefront_single_post_after' );
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+	<?php if ( have_posts() ) : ?>
+	    <header class="page-header">
+		<?php  the_archive_title( '<h1 class="page-title">', '</h1>' );		?>
+	    </header>
 
-		endwhile; // End of the loop. ?>
+	    <?php echo "abc"; ?>
+	    <?php while ( have_posts() ) : the_post();
 
+//	    do_action( 'storefront_page_before' );
+
+	    get_template_part( 'content', 'single' );
+
+//	    do_action( 'storefront_page_after' );
+
+	    endwhile; // End of the loop. ?>
+	    
+
+        else :
+        //	get_template_part( 'content', 'none' );
+        endif; ?>
+    </div>
+    
+    <div class="col-xs-6 col-md-9">
+	<?php get_template_part( 'template-parts/navigation/navigation', 'left' ); ?>
+    </div>
+</div>
 
 <?php
-//do_action( 'storefront_sidebar' );
 get_footer();
