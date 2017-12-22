@@ -74,7 +74,7 @@ if ( ! function_exists('lgw_post_pics') ) {
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php  if ($big_atta_pic == "0") :?>
 		<div style="width:100%;height:auto;" class="zoom" id="ex1" >
-		    <img src="<?php echo $attachments->url(); ?>" style="width:300px;" />
+		    <img src="<?php echo $attachments->url(); ?>" style="width:100%;" />
 		</div>
 		<ul style="width:100%;height:auto;float:left;">
 		    <?php $big_atta_pic = 1 ?>
