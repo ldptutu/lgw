@@ -13,12 +13,11 @@
         	<script type="text/javascript">
                         (function() {
                             jQuery('#ex1').zoom();
-                            
                             jQuery('#ex1_li img').each(function(){
                                 var l_url_img = this.src;
                                 jQuery(this).click(function(){
-                                    alert('here');
                                     jQuery('#ex1 img')[0].src=l_url_img;
+                                    jQuery('#ex1').zoom();
                                 });
                             });
                         }());
