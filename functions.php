@@ -96,7 +96,8 @@ if (! function_exists( 'lgw_post_header' ) ) {
      * @since 1.0.0
      */
     function lgw_post_header() {?>
-    <header class="entry-header">
+    <div class="col-md-4">
+	<header class="entry-header">
 	<?php
 	if ( is_single() ) {
 	    lgw_posted_on();
@@ -105,11 +106,11 @@ if (! function_exists( 'lgw_post_header' ) ) {
 	    if ( 'post' == get_post_type() ) {
 		lgw_posted_on();
 	    }
-	    
 	    the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 	}
 	?>
-    </header><!-- .entry-header -->
+	</header><!-- .entry-header -->
+    </div>
 <?php }
 }
 
