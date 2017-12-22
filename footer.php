@@ -15,6 +15,8 @@
                             jQuery('#ex1').zoom();
                             jQuery('#ex1_li img').each(function(){
                                 var l_url_img = this.src;
+                                jQuery('#ex1').trigger('zoom.desctroy');
+                                l_url_img = l_url_img.replace(/-100x100/g, "");
                                 jQuery(this).click(function(){
                                     jQuery('#ex1 img')[0].src=l_url_img;
                                     jQuery('#ex1').zoom();
