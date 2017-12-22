@@ -12,9 +12,8 @@
 <?php wp_footer() ?>
         	<script type="text/javascript">
                         (function() {
-                            alert('here');
+                            $('#ex1').zoom();
                         }());
              </script>
-
 </body>
 </html>
