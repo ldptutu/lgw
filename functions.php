@@ -73,11 +73,10 @@ if ( ! function_exists('lgw_post_pics') ) {
     <div class="col-md-4">
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php  if ($big_atta_pic == "0") :?>
-		<div>
+		<div style="width:100%;height:auto;" >
 		    <img src="<?php echo $attachments->url(); ?>"/>
 		</div>
-		<ul>
-		    
+		<ul style="width:100%;height:auto;float:left;">
 		    <?php $big_atta_pic = 1 ?>
 		    <?php endif; ?>
 		    <li>
