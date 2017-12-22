@@ -40,8 +40,9 @@ body {
 
 .site-title {
     float:left;
-    margin-left:0;
+    margin-left:15px;
     display:block;
+    
 }
 
 .search-pannel {
