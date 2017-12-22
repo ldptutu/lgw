@@ -86,7 +86,9 @@ if ( ! function_exists('lgw_post_pics') ) {
 			Type: <?php echo $attachments->type(); ?><br />
 			Subtype: <?php echo $attachments->subtype(); ?><br />
 			URL: <?php echo $attachments->url(); ?><br />
-			Image: <?php echo $attachments->image( 'thumbnail' ); ?><br />
+			Image: <?php echo $attachments->image(
+			       array(50,50));
+			       			       ?><br />
             Source: <?php echo $attachments->src( 'full' ); ?><br />
             Size: <?php echo $attachments->filesize(); ?><br />
             Title Field: <?php echo $attachments->field( 'title' ); ?><br />
@@ -302,6 +304,7 @@ function clean_custom_menus() {
 }
 
 function lgw_setup() {
+    
     load_theme_textdomain( 'lgw' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
