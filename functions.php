@@ -66,7 +66,8 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
 
 if ( ! function_exists('lgw_post_pics') ) {
     function lgw_post_pics() {
-	$attachments = new Attachments( 'attachments', get_the_id() );
+	
+	$attachments = new Attachments( 'my_attachments', get_the_id() );
 	$big_atta_pic = 0;
 	$small_atta_pic_item = "";
 	if( $attachments->exist() ) :?>	
@@ -430,8 +431,8 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
 add_action( 'lgw_single_post',         'lgw_post_pics',          10 );
 add_action( 'lgw_single_post',         'lgw_post_header',          20 );
 /*
-add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
-*/
+   add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
+ */
 add_action( 'lgw_single_post',         'lgw_post_content',         40 );
 
 /*
