@@ -1,6 +1,22 @@
 <?php
 get_header(); ?>
+
+
 <div class="container">
+
+    
+
+    <ul class="breadcrumb">
+
+	<li><a href="#">Home</a></li>
+
+	<li><a href="#">Products</a></li>
+
+	<li class="active">Accessories</li>
+
+    </ul>
+
+    
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
 	<?php if ( have_posts() ) : ?>
