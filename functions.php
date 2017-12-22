@@ -132,7 +132,7 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
 	     */
 	    do_action( 'storefront_post_content_before' );
 
-	    echo "hah";
+	    the_title( '<h1 class="entry-title">', '</h1>' );
 	    
 	    the_content(
 		sprintf(
