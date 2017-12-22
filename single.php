@@ -9,11 +9,9 @@ get_header(); ?>
 	    </header>
 	    <?php echo "abc"; ?>
 	    <?php while ( have_posts() ) : the_post();
-//	    do_action( 'storefront_page_before' );
-
-//	    get_template_part( 'content', 'single' );
-//	    do_action( 'storefront_page_after' );
-
+	    //	    do_action( 'storefront_page_before' );
+	    get_template_part( 'content', 'single' );
+	    //	    do_action( 'storefront_page_after' );
 	    endwhile; // End of the loop.
 	    else :
             //	get_template_part( 'content', 'none' );
