@@ -66,21 +66,34 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
 
 if ( ! function_exists('lgw_post_pics') ) {
     function lgw_post_pics() {
-	
 	$attachments = new Attachments( 'my_attachments', get_the_id() );
 	$big_atta_pic = 0;
 	$small_atta_pic_item = "";
 	if( $attachments->exist() ) :?>	
     <div class="col-md4">
 	<?php while( $attachment = $attachments->get() ) :?>
-	    <?php 	    if ($big_atta_pic == "0") :?>
+	    <?php  if ($big_atta_pic == "0") :?>
 		<div>
 		    <img src="0"/>
 		</div>
 		<ul>
+
+		    
 		    <?php $big_atta_pic = 1 ?>
-	    <?php endif; ?>
-	    <?php $small_atta_pic_item .= '<li><img src=""/></li>' ?>
+		    <?php endif; ?>
+		    <li>
+			ID: <?php echo $attachments->id(); ?><br />
+			Type: <?php echo $attachments->type(); ?><br />
+			Subtype: <?php echo $attachments->subtype(); ?><br />
+			URL: <?php echo $attachments->url(); ?><br />
+			Image: <?php echo $attachments->image( 'thumbnail' ); ?><br />
+            Source: <?php echo $attachments->src( 'full' ); ?><br />
+            Size: <?php echo $attachments->filesize(); ?><br />
+            Title Field: <?php echo $attachments->field( 'title' ); ?><br />
+            Caption Field: <?php echo $attachments->field( 'caption' ); ?>
+	    
+
+	    </li>
 	<?php endwhile; ?>
 		</ul> </div><!-- end col-m4 -->
 <?php endif; ?>
