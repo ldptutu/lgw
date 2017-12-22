@@ -16,12 +16,11 @@
                             
                             jQuery('#ex1_li img').each(function(){
                                 var l_url_img = this.src;
-                                alert(l_url_img);
                                 jQuery(this).click(function(){
-                                    jQuery('#ex1 img').src=l_url_img;
+                                    alert('here');
+                                    //jQuery('#ex1 img').src=l_url_img;
                                 });
                             });
-                            
                         }());
              </script>
 </body>
