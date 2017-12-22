@@ -12,7 +12,7 @@
 <?php wp_footer() ?>
         	<script type="text/javascript">
                         (function() {
-                            $('#ex1').zoom();
+                            jQuery('#ex1').zoom();
                         }());
              </script>
 </body>
