@@ -67,7 +67,9 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
 if ( ! function_exists('lgw_post_pics') ) {
     function lgw_post_pics() {
 	echo the_ID();
+	echo '-----------';
 	echo get_the_id();
+	echo '-----------';
 	$attachments = new Attachments( 'attachments', get_the_ID() );
 	$big_atta_pic = 0;
 	$small_atta_pic_item = "";
