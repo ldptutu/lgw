@@ -43,10 +43,13 @@ body {
     margin-left:15px;
     display:block;
 }
+
 .site-name {
     font-size:14px;
     line-height:90%;
     color: #9aa0a7;
+    display: block;
+    margin-top: 15px;
 }
 
 .search-pannel {
