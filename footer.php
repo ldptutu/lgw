@@ -13,6 +13,7 @@
 
         <script type="text/javascript">
                     $(document).ready(function(){
+                        alert('herer');
                         $('#ex1').zoom();
                     });
 </script>
