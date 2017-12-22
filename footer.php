@@ -2,12 +2,6 @@
 ?>
 
 
-<script>
-$(document).ready(function(){
-    $('#ex1').zoom();
-});
-</script>
-
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="wrap">
 	<?php
@@ -16,5 +10,12 @@ $(document).ready(function(){
     </div><!-- .wrap -->
 </footer><!-- #colophon -->
 <?php wp_footer() ?>
+
+        <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('#ex1').zoom();
+                    });
+</script>
+
 </body>
 </html>
