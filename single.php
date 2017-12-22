@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-
+<h1>abvdcdfd</h1>
 		<?php while ( have_posts() ) : the_post();
 
 			do_action( 'storefront_single_post_before' );
