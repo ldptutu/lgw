@@ -71,8 +71,7 @@ if ( ! function_exists('lgw_post_pics') ) {
 	$attachments = new Attachments( 'attachments', get_the_ID() );
 	$big_atta_pic = 0;
 	$small_atta_pic_item = "";
-	if( $attachments->exist() ) :
-?>	
+	if( $attachments->exist() ) :?>	
     <div class="col-md4">
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php 	    if ($big_atta_pic == "0") :?>
@@ -80,12 +79,11 @@ if ( ! function_exists('lgw_post_pics') ) {
 		    <img src="0"/>
 		</div>
 		<ul>
-		    <? php $big_atta_pic = 1 ?>
+		    <?php $big_atta_pic = 1 ?>
 	    <?php endif; ?>
 	    <?php $small_atta_pic_item .= '<li><img src=""/></li>' ?>
 	<?php endwhile; ?>
-		</ul>
-    </div><!-- end col-m4 -->
+		</ul> </div><!-- end col-m4 -->
 <?php endif; ?>
 <?php
 }
