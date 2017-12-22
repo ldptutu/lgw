@@ -70,7 +70,7 @@ if ( ! function_exists('lgw_post_pics') ) {
 	$big_atta_pic = 0;
 	$small_atta_pic_item = "";
 	if( $attachments->exist() ) :?>	
-    <div class="col-md4">
+    <div class="col-md-4">
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php  if ($big_atta_pic == "0") :?>
 		<div>
@@ -124,7 +124,6 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
     <div class="col-md-4">
 	<div class="entry-content">
 	<?php
-
 	/**
 	 * Functions hooked in to storefront_post_content_before action.
 	 *
@@ -146,7 +145,7 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
 	    'after'  => '</div>',
 	) );
 	?>
-    </div><!-- .entry-content -->
+	</div><!-- .entry-content -->
     </div>    
 <?php
 }
