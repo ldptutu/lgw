@@ -42,7 +42,9 @@ body {
     float:left;
     margin-left:15px;
     display:block;
-    
+}
+.site-name {
+    font-size:0.875em
 }
 
 .search-pannel {
