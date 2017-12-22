@@ -407,9 +407,12 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
 add_action( 'lgw_single_post',         'lgw_post_header',          10 );
 add_action( 'lgw_single_post',         'lgw_post_meta',            20 );
 add_action( 'lgw_single_post',         'lgw_post_content',         30 );
+
+/*
 add_action( 'lgw_single_post_bottom',  'lgw_post_nav',             10 );
 add_action( 'lgw_single_post_bottom',  'lgw_display_comments',     20 );
 add_action( 'lgw_post_content_before', 'lgw_post_thumbnail',       10 );
+*/
 
 
 
