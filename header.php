@@ -20,5 +20,3 @@
 	<?php if (is_front_page() && is_home()):?>
 	    <?php get_template_part('template-parts/carousel/carousel','image'); ?>
 	<?php endif; ?>
-	<!--
-	-->	
