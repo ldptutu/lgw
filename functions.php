@@ -76,7 +76,7 @@ if ( ! function_exists('lgw_post_pics') ) {
 		<div style="width:100%;height:auto;" class="zoom" id="ex1" >
 		    <img src="<?php echo $attachments->url(); ?>" style="width:100%;" />
 		</div>
-		<ul class="nav nav-pills">
+		<ul class="nav nav-pills" id="ex1_li">
 		    <?php $big_atta_pic = 1 ?>
 	    <?php endif; ?>
 	    <li class="presentation">
