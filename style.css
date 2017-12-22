@@ -38,6 +38,16 @@ body {
     margin-bottom:0px;
 }
 
+.site-title {
+    float:left;
+    margin-left:0;
+}
+
+.search-pannel {
+    float:right;
+    margin-right: 0;
+    clear: none;
+}
 
 .navbar-default {
     background-color: #ffffff;
