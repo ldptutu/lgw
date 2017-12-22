@@ -3,9 +3,9 @@
 
 
 <script>
-  if ($ && $.fn.zoom) {
+$(document).ready(function(){
     $('#ex1').zoom();
-  }
+});
 </script>
 
 <footer id="colophon" class="site-footer" role="contentinfo">
