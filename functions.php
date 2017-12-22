@@ -66,7 +66,7 @@ if ( ! function_exists( 'lgw_posted_on' ) ) {
 
 if ( ! function_exists('lgw_post_pics') ) {
     function lgw_post_pics() {
-	echo the_ID();
+	echo the_id();
 	echo '-----------';
 	echo get_the_id();
 	echo '-----------';
