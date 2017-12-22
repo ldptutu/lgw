@@ -74,28 +74,14 @@ if ( ! function_exists('lgw_post_pics') ) {
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php  if ($big_atta_pic == "0") :?>
 		<div>
-		    <img src="0"/>
+		    <img src="<?php echo $attachments->url(); ?>"/>
 		</div>
 		<ul>
-
 		    
 		    <?php $big_atta_pic = 1 ?>
 		    <?php endif; ?>
 		    <li>
-			ID: <?php echo $attachments->id(); ?><br />
-			Type: <?php echo $attachments->type(); ?><br />
-			Subtype: <?php echo $attachments->subtype(); ?><br />
-			URL: <?php echo $attachments->url(); ?><br />
-			Image: <?php echo $attachments->image(
-			       array(50,50));
-			       			       ?><br />
-            Source: <?php echo $attachments->src( 'full' ); ?><br />
-            Size: <?php echo $attachments->filesize(); ?><br />
-            Title Field: <?php echo $attachments->field( 'title' ); ?><br />
-            Caption Field: <?php echo $attachments->field( 'caption' ); ?>
-	    
-
-	    </li>
+			Image: <?php echo $attachments->image(array(50,50));      			       ?> </li>
 	<?php endwhile; ?>
 		</ul> </div><!-- end col-m4 -->
 <?php endif; ?>
