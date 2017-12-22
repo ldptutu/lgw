@@ -134,7 +134,7 @@ if ( ! function_exists( 'lgw_post_meta' ) ) {
      *
      * @since 1.0.0
      */
-    function storefront_post_meta() {
+    function lgw_post_meta() {
 ?>
     <aside class="entry-meta">
 	<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search.
