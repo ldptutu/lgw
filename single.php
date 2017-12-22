@@ -26,8 +26,6 @@ get_header(); ?>
 //	    do_action( 'storefront_page_after' );
 
 	    endwhile; // End of the loop. ?>
-	    
-
         else :
         //	get_template_part( 'content', 'none' );
         endif; ?>
@@ -38,5 +36,4 @@ get_header(); ?>
     </div>
 </div>
 
-<?php
-get_footer();
+<?php get_footer();
