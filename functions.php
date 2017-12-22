@@ -110,7 +110,6 @@ if (! function_exists( 'lgw_post_header' ) ) {
 	}
 	?>
 	</header><!-- .entry-header -->
-    </div>
 <?php }
 }
 
@@ -147,6 +146,7 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
 	) );
 	?>
     </div><!-- .entry-content -->
+    </div>    
 <?php
 }
 }
