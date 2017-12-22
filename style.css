@@ -44,7 +44,9 @@ body {
     display:block;
 }
 .site-name {
-    font-size:1.875em
+    font-size:14px;
+    line-heigth:22px;
+    font-weight:400;
 }
 
 .search-pannel {
