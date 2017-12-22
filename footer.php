@@ -10,13 +10,11 @@
     </div><!-- .wrap -->
 </footer><!-- #colophon -->
 <?php wp_footer() ?>
-
-        <script type="text/javascript">
-                    $(document).ready(function(){
-                        alert('herer');
-                        $('#ex1').zoom();
-                    });
-</script>
+        	<script type="text/javascript">
+                        (function() {
+                            alert('here');
+                        }());
+             </script>
 
 </body>
 </html>
