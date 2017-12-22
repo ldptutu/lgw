@@ -9,7 +9,7 @@ get_header();
 		<?php  the_archive_title( '<h1 class="page-title">', '</h1>' );		?>
 	    </header>
 
-
+	    <?php echo "abc"; ?>
 	    <?php while ( have_posts() ) : the_post();
 
 //	    do_action( 'storefront_page_before' );
