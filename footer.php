@@ -1,5 +1,13 @@
 <?php
 ?>
+
+
+<script>
+  if ($ && $.fn.zoom) {
+    $('#ex1').zoom();
+  }
+</script>
+
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="wrap">
 	<?php

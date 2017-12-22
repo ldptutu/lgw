@@ -73,14 +73,14 @@ if ( ! function_exists('lgw_post_pics') ) {
     <div class="col-md-4">
 	<?php while( $attachment = $attachments->get() ) :?>
 	    <?php  if ($big_atta_pic == "0") :?>
-		<div style="width:100%;height:auto;" >
+		<div style="width:100%;height:auto;" class="zoom" id="ex1" >
 		    <img src="<?php echo $attachments->url(); ?>"/>
 		</div>
 		<ul style="width:100%;height:auto;float:left;">
 		    <?php $big_atta_pic = 1 ?>
-		    <?php endif; ?>
-		    <li>
-			Image: <?php echo $attachments->image(array(50,50));      			       ?> </li>
+	    <?php endif; ?>
+	    <li>
+		Image: <?php echo $attachments->image(array(50,50));      			       ?> </li>
 	<?php endwhile; ?>
 		</ul> </div><!-- end col-m4 -->
 <?php endif; ?>
@@ -122,28 +122,28 @@ if ( ! function_exists( 'lgw_post_content' ) ) {
 ?>
     <div class="col-md-4">
 	<div class="entry-content">
-	<?php
-	/**
-	 * Functions hooked in to storefront_post_content_before action.
-	 *
-	 * @hooked storefront_post_thumbnail - 10
-	 */
-	do_action( 'storefront_post_content_before' );
+	    <?php
+	    /**
+	     * Functions hooked in to storefront_post_content_before action.
+	     *
+	     * @hooked storefront_post_thumbnail - 10
+	     */
+	    do_action( 'storefront_post_content_before' );
 
-	the_content(
-	    sprintf(
-		__( 'Continue reading %s', 'storefront' ),
-		'<span class="screen-reader-text">' . get_the_title() . '</span>'
-	    )
-	);
+	    the_content(
+		sprintf(
+		    __( 'Continue reading %s', 'storefront' ),
+		    '<span class="screen-reader-text">' . get_the_title() . '</span>'
+		)
+	    );
 
-	do_action( 'storefront_post_content_after' );
+	    do_action( 'storefront_post_content_after' );
 
-	wp_link_pages( array(
-	    'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
-	    'after'  => '</div>',
-	) );
-	?>
+	    wp_link_pages( array(
+		'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+		'after'  => '</div>',
+	    ) );
+	    ?>
 	</div><!-- .entry-content -->
     </div>    
 <?php
@@ -408,6 +408,7 @@ function lgw_scripts() {
     wp_enqueue_style('lgw-style',get_stylesheet_uri());
     
     wp_enqueue_script('lgw-bootstrap',get_theme_file_uri('/assets/js/bootstrap.min.js'),array('jquery'),'3.3.7');
+    wp_enqueue_script('lgw-bootstrap',get_theme_file_uri('/assets/js/jquery.zoom.js'),array('jquery'),'3.3.7');
     
     //    wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
     // Load the html5 shiv.
@@ -432,8 +433,8 @@ add_action( 'wp_enqueue_scripts', 'lgw_scripts' );
 
 add_action( 'lgw_single_post',         'lgw_post_pics',          10 );
 /*
-add_action( 'lgw_single_post',         'lgw_post_header',          20 );
-add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
+   add_action( 'lgw_single_post',         'lgw_post_header',          20 );
+   add_action( 'lgw_single_post',         'lgw_post_meta',            30 );
  */
 add_action( 'lgw_single_post',         'lgw_post_content',         40 );
 
