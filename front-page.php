@@ -39,10 +39,10 @@ get_header();
 		    <?php if( $attachment = $attachments->get_single( $my_index ) ) { ?>
 			<a href="<?php the_permalink(); ?>" class="no_border">
 			    <?php if($flag == true): ?>
-				<?php $attachment->image(array(450,600);?>
+				<?php $attachment->image(array(450,600));?>
 				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>
 			    <?php else : ?>
-				<?php $attachment->image(array(450,600);?>
+				<?php $attachment->image(array(450,600));?>
 				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
 			</a>
 		    <?php }
