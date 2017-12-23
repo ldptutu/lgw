@@ -3,7 +3,13 @@ get_header(); ?>
 
 
 <div class="container">
-    
+
+    <div class="breadcrumbs" typeof="BreadcrumbList" >
+<?php if(function_exists('bcn_display'))
+{
+bcn_display();
+}?>
+
     <ul class="breadcrumb">
 	<li><a href="#">Home</a></li>
 	<li><a href="#">Products</a></li>
