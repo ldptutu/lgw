@@ -12,7 +12,7 @@ get_header();
 	<div class="col-xs-12 col-sm-6 col-md-9">
 	    <?php if ( have_posts() ) : ?>
 		<header class="page-header" style="border-bottom:0">
-		    <h1 class="page-title"><?php <the_category_title()?></h1>
+		    <h1 class="page-title"><?php the_category_title();?></h1>
 		</header><!-- .page-header -->
 		
 	    <?php get_template_part( 'loop' );
