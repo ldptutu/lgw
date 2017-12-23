@@ -52,9 +52,10 @@ body {
     margin-top: 15px;
 }
 
-.search-pannel {
-    float:right;
-    margin-right: 0;
+.site-search {
+    width: 21.7391304348%;
+    float: right;
+    margin: 0 0 3.7em;
     clear: none;
 }
 
