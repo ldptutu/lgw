@@ -36,14 +36,12 @@ get_header();
 		<?php	$attachments = new Attachments( 'my_attachments',get_the_id());
 		if ($attachments->exist()) {?>
 		    <?php $my_index = 0; ?>
-		    <?php if( $attachment = $attachments->get_single( $my_index ) ) { ?>
+		    <?php if( $attachment = $attachments->get_single( $my_index )) { ?>
 			<a href="<?php the_permalink(); ?>" class="no_border">
 			    <?php if($flag == true): ?>
-				<?php $attachment->image(array(450,600));?>
-				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>
+				<img src="<?php echo wp_get_attachment_image_src($attachment->id,array(450,600))[0]; ?>"  width="100%" heigth="auto"/>
 			    <?php else : ?>
-				<?php $attachment->image(array(450,600));?>
-				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
+			<img src="<?php echo wp_get_attachment_image_src($attachment->id,array(450,600)[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
 			</a>
 		    <?php }
 		    if ($flag == false){
