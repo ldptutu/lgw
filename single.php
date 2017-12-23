@@ -4,10 +4,9 @@ get_header(); ?>
 
 <div class="container">
 
-
     <div class="breadcrumb breadcrumbs" typeof="BreadcrumbList" >>
 <?php if(function_exists('bcn_display')) {
-    bcn_display();
+bcn_display();
 }?>
 </div>
 
@@ -28,6 +27,7 @@ get_header(); ?>
 		</div>
 	</div>
     </div><!-- #post-## -->
+    
 </div>
 
 <?php get_footer(); ?>
