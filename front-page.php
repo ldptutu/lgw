@@ -2,8 +2,6 @@
 get_header();
 ?>
 <div class="container">
-    <h1> front page</h1>
-    
     <?php  if (has_nav_menu('front_page_menu_rmd')){
 	if (($locations = get_nav_menu_locations()) && isset($locations['front_page_menu_rmd'])) {
 	    $menu = get_term($locations['front_page_menu_rmd'],'nav_menu');
@@ -41,8 +39,10 @@ get_header();
 		    <?php if( $attachment = $attachments->get_single( $my_index ) ) { ?>
 			<a href="<?php the_permalink(); ?>" class="no_border">
 			    <?php if($flag == true): ?>
+				<?php $attachment->image(array(450,600);?>
 				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>
 			    <?php else : ?>
+				<?php $attachment->image(array(450,600);?>
 				<img src="<?php echo wp_get_attachment_image_src($attachment->id)[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
 			</a>
 		    <?php }
