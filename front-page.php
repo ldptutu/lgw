@@ -41,7 +41,7 @@ get_header();
 			    <?php if($flag == true): ?>
 				<img src="<?php echo wp_get_attachment_image_src($attachment->id,array(450,600))[0]; ?>"  width="100%" heigth="auto"/>
 			    <?php else : ?>
-			<img src="<?php echo wp_get_attachment_image_src($attachment->id,array(450,600)[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
+			<img src="<?php echo wp_get_attachment_image_src($attachment->id,array(450,600))[0]; ?>"  width="100%" heigth="auto"/>								 <?php endif; ?>
 			</a>
 		    <?php }
 		    if ($flag == false){
