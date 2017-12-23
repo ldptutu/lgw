@@ -8,15 +8,11 @@ get_header();
 	    bcn_display();
 	}?>
     </div>
-    
     <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-9">
 	    <?php if ( have_posts() ) : ?>
-		<header class="page-header">
-		    <?php
-		    the_archive_title( '<h1 class="page-title">', '</h1>' );
-		    the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		    ?>
+		<header class="page-header" style="border-bottom:0">
+		    <h1 class="page-title"><?php <the_category_title()?></h1>
 		</header><!-- .page-header -->
 		
 	    <?php get_template_part( 'loop' );
