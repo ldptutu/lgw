@@ -55,9 +55,10 @@ body {
 .site-search {
     width: 21.7391304348%;
     float: right;
-    margin: 0 0 3.7em;
+    margin: 0 0 .7em;
     clear: none;
 }
+
 
 .screen-reader-text {
     clip: rect(1px 1px 1px 1px);
@@ -65,7 +66,7 @@ body {
     position: absolute !important;
 }
 .search-field{
-    padding-left:2em;
+    padding-left:0px;
 }
 .search-button-css {
 clip: rect(1px,1px,1px,1px);
