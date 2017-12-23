@@ -20,7 +20,7 @@ if ($attachments->exist()) {?>
 <?php endwhile;
 $wp_query =  null;
 $wp_query = $temp;
+
 lgw_paging_nav();
 
-//do_action( 'storefront_loop_after' );
 
