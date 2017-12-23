@@ -5,11 +5,11 @@ get_header(); ?>
 <div class="container">
 
 
-    <ul class="breadcrumb breadcrumbs" typeof="BreadcrumbList" >>
+    <div class="breadcrumb breadcrumbs" typeof="BreadcrumbList" >>
 <?php if(function_exists('bcn_display')) {
     bcn_display();
 }?>
-</ul>
+</div>
 
     
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
