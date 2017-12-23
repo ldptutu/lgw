@@ -4,17 +4,13 @@ get_header(); ?>
 
 <div class="container">
 
-    <div class="breadcrumbs" typeof="BreadcrumbList" >
+
+    <ul class="breadcrumb" typeof="BreadcrumbList" >>
 <?php if(function_exists('bcn_display'))
 {
 bcn_display();
 }?>
-
-    <ul class="breadcrumb">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Products</a></li>
-	<li class="active">Accessories</li>
-    </ul>
+</ul>
 
     
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
