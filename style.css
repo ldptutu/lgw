@@ -59,6 +59,21 @@ body {
     clear: none;
 }
 
+.screen-reader-text {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+}
+.search-field{
+    padding-left:2em;
+}
+.search-button-css {
+clip: rect(1px,1px,1px,1px);
+position: absolute !important;
+top: 0;
+left: 0;
+}
+
 .navbar-default {
     background-color: #ffffff;
     border-color: #ffffff;
