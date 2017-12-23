@@ -76,8 +76,10 @@ left: 0;
 }
 
 .navbar-default {
-    background-color: #ffffff;
-    border-color: #ffffff;
+    font-size: 14px;
+    background-color: rgba(248, 248, 248, 1);
+    border-width: 0px;
+    border-radius: 0px;
 }
 .navbar-default .navbar-brand {
     color: #000000;
@@ -90,37 +92,41 @@ left: 0;
     color: #000000;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #000000;
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(248, 248, 248, 0);
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #44393a;
+    color: rgba(214, 201, 17, 1);
+    background-color: rgba(248, 248, 248, 0);    
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-    background-color: #ffffff;
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(248, 248, 248, 0);
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-    color: #000000;
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(248, 248, 248, 0);
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-    color: #44393a;
-    background-color: #879ff1;
+    color: rgba(214, 201, 17, 1);
+    background-color: rgba(248, 248, 248, 0);    
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-    background-color: #879ff1;
+    background-color: rgba(248, 248, 248, 0);
 }
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #44393a;
-    background-color: #879ff1;
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(225, 235, 33, 1);
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #44393a;
-    background-color: #879ff1;
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(225, 235, 33, 1);
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
