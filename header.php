@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav id="custom-boostrap-menu" class="navbar navbar-default navbar-static-top">
 	    <div class="container">
 		<?php get_template_part('template-parts/header/header','image'); ?>
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
