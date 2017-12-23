@@ -5,10 +5,9 @@ get_header(); ?>
 <div class="container">
 
 
-    <ul class="breadcrumb" typeof="BreadcrumbList" >>
-<?php if(function_exists('bcn_display'))
-{
-bcn_display();
+    <ul class="breadcrumb breadcrumbs" typeof="BreadcrumbList" >>
+<?php if(function_exists('bcn_display')) {
+    bcn_display();
 }?>
 </ul>
 
