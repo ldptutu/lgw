@@ -2,9 +2,11 @@
 get_header();
 ?>
 
+<div class="container"
+
     <div class="breadcrumb breadcrumbs" typeof="BreadcrumbList" >>
 <?php if(function_exists('bcn_display')) {
-    bcn_display();
+bcn_display();
 }?>
 </div>
 
@@ -31,6 +33,7 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' );
     </div>
 </div>
 
+    </div>
 <?php
 get_footer();
 
